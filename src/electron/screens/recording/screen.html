@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' https://cdn.tailwindcss.com;"
+    />
+    <title>Electron System Audio Recorder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-white min-h-screen w-full flex flex-col items-center justify-center"
+  >
+    <h1 class="text-3xl font-bold mb-8 mt-8 w-full text-center">
+      Electron System Audio Recorder
+    </h1>
+
+    <div class="w-full max-w-2xl px-4">
+      <div class="mb-6 w-full">
+        <label for="recording-path" class="block font-medium mb-2"
+          >Recording Path:
+          <span id="selected-folder-path" class="text-gray-500"></span
+        ></label>
+        <button
+          id="select-folder"
+          class="w-full border border-gray-200 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500 hover:bg-gray-50 transition-colors duration-150 ease-in-out py-2"
+        >
+          Select Folder
+        </button>
+      </div>
+      <div class="mb-6 w-full">
+        <label for="recording-filename" class="block font-medium mb-2"
+          >Recording Filename:</label
+        >
+        <div class="flex gap-2 w-full">
+          <input
+            type="text"
+            id="recording-filename"
+            class="flex-1 border border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 py-2 px-2"
+          />
+        </div>
+      </div>
+      <div class="flex justify-between mt-10 w-full gap-4">
+        <button
+          id="start-recording"
+          class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 rounded-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+        >
+          Start Recording
+        </button>
+        <button
+          id="stop-recording"
+          class="flex-1 bg-red-500 hover:bg-red-600 text-white font-medium py-3 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled
+        >
+          Stop Recording
+        </button>
+      </div>
+
+      <div id="recording-status" class="mt-6 text-gray-500 w-full text-center">
+        Elapsed Time: <span id="elapsed-time">0s</span>
+      </div>
+
+      <div class="mt-4 w-full" id="output-file-path-container">
+        <label for="output-file-path" class="block font-medium"
+          >Output File Path:</label
+        >
+        <div id="output-file-path" class="text-gray-500">
+          Start Recording to see the file path
+        </div>
+      </div>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
