@@ -1,5 +1,11 @@
 # System Audio-Only Recorder for macOS
 
+## Demo
+
+<video src="demo.mov" controls width="600">
+  Your browser does not support the video tag.
+</video>
+
 ## Problem Statement
 
 Modern browsers do not allow direct recording of system audio for privacy reasons. This project provides a native solution for recording only system audio (excluding the microphone) on macOS, using Electron and Swift.
